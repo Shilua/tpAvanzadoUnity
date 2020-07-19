@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class CamaraFPS : MonoBehaviour
 {
-    private float angulo;
-    private float angulo2;
+    private float anguloX;
+    private float anguloY;
+    private float mouseSensitive = 100f;
+    public Transform playerBody;
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;    
+    }
+
     // Update is called once per frame
     void Update()
     {
-        this.angulo += -Input.GetAxis("Mouse Y");
-        this.angulo = Mathf.Clamp(angulo, -45, 45);
-        transform.localEulerAngles = new Vector3(angulo, 0, 0);
+        this.anguloX = Input.GetAxis("Mouse X") * mouseSensitive * Time.deltaTime;
+        playerBody = this.transform.parent.transform;
+        playerBody.Rotate(Vector3.up * this.anguloX);
+        this.anguloY += -Input.GetAxis("Mouse Y");
+        this.anguloY = Mathf.Clamp(anguloY, -45, 45);
+        transform.localEulerAngles = new Vector3(anguloY, 0, 0);
     }
 }
