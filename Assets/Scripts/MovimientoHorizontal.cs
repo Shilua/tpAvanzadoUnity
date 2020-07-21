@@ -14,6 +14,7 @@ public class MovimientoHorizontal : MonoBehaviour
     private float minLimit;
     private float maxLimit;
 
+
     void Start()
     {
         minLimit = transform.position.x;
@@ -25,15 +26,26 @@ public class MovimientoHorizontal : MonoBehaviour
     void Update()
     {
         //timer += 1 * Time.deltaTime;
+        Invoke("Movimiento", 2f);
+
+        //speed += timer;
+    }
+
+    void Movimiento()
+    {
         if (transform.position.x > maxLimit)
         {
             speed *= -1;
         }
-            
-        if (transform.position.x < minLimit)
-            speed *= -1;
 
-            transform.Translate(direction * speed * Time.deltaTime);
-        //speed += timer;
+
+        if (transform.position.x < minLimit)
+        {
+            speed *= -1;
+        }
+
+
+
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }
