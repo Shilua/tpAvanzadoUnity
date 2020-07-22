@@ -1368,6 +1368,9 @@ GameObject:
   - component: {fileID: 3117462503438214583}
   - component: {fileID: 641870226871523462}
   - component: {fileID: 2829877145927917789}
+  - component: {fileID: 8121288885217568928}
+  - component: {fileID: 2940379123799420758}
+  - component: {fileID: 8922270816231129940}
   m_Layer: 8
   m_Name: Soldier_demo
   m_TagString: Untagged
@@ -1436,7 +1439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3117462502951903231}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 529c3d8c562514445afcacb8c5a55248, type: 3}
   m_Name: 
@@ -1489,6 +1492,61 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8121288885217568928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117462502951903231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634a35de49b4582499e92583ff012e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigoDetectado: {fileID: 0}
+  puntos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  layers:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &2940379123799420758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117462502951903231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d06a608791ec45b37063ab645006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigoActual: {fileID: 0}
+  rangoVision: 10
+  rangoAtaque: 3
+  anguloVision: 0.5
+  rangoAleatorio: 0
+--- !u!114 &8922270816231129940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117462502951903231}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7144cb1ea980643847a8d9b85a163f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigoPerdido: {fileID: 0}
+  enemigoEnRango: {fileID: 0}
+  layers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &3117462503337691228
 GameObject:
   m_ObjectHideFlags: 0

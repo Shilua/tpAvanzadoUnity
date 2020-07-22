@@ -12,14 +12,16 @@ public class EstadoPatrullar : MonoBehaviour
     private Transform destino;
     private Agente agente;
     public LayerMask layers;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         agente = GetComponent<Agente>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         puntoActual = 0;
         destino = puntos[0];
-        
+        navMeshAgent.SetDestination(destino.position);
     }
 
     // Update is called once per frame
@@ -29,31 +31,28 @@ public class EstadoPatrullar : MonoBehaviour
         {
             puntoActual++;
             destino = puntos[puntoActual];
-            navMeshAgent.SetDestination(destino.position);
+            navMeshAgent.SetDestination(destino.position);       
         }
-
         if (puntoActual == puntos.Length - 1)
         {
-            puntoActual = 0;
+            puntoActual = -1;
         }
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, agente.rangoVision, layers);
-
-        for (int i = 0 ; i > colliders.Length; i++)
+        if(colliders != null)
         {
-            Transform jugadorEnRango = colliders[i].gameObject.transform;
+            Transform jugadorEnRango = colliders[0].gameObject.transform;
             Vector3 vectorAPj = jugadorEnRango.position - transform.position;
             vectorAPj.Normalize();
             float dot = Vector3.Dot(transform.forward, vectorAPj);
-            if(dot > agente.anguloVision)
+            if (dot > agente.anguloVision)
             {
                 enemigoDetectado = GetComponent<EstadoPerseguir>();
                 enemigoDetectado.enabled = true;
+                agente.enemigoActual = colliders[0].gameObject;
                 enabled = false;
-                agente.enemigoActual = colliders[i].gameObject;
-                break;
             }
-
         }
+        
     }
 }
