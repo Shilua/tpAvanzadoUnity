@@ -24,6 +24,16 @@ public class EstadoPatrullar : MonoBehaviour
         navMeshAgent.SetDestination(destino.position);
     }
 
+    void OnEnable()
+    {
+        agente = GetComponent<Agente>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        puntoActual = 0;
+        destino = puntos[0];
+        navMeshAgent.SetDestination(destino.position);
+    }
+
     // Update is called once per frame
     void Update()
     {

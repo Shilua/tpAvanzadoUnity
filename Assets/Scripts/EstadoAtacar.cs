@@ -21,7 +21,6 @@ public class EstadoAtacar : MonoBehaviour
 
     void OnEnable()
     {
-        print("enable");
         animator = GetComponent<Animator>();
         animator.SetBool("Idle", false);
         animator.SetBool("Run", false);
@@ -63,12 +62,11 @@ public class EstadoAtacar : MonoBehaviour
         float largoDelRayo = 50f;
         Vector3 otroVector = transform.forward;
         otroVector.y += agente.rangoAleatorio;
-        //Ray shootRay = new Ray(transform.position, transform.forward);
         Vector3 vectorAPj = agente.enemigoActual.transform.position - transform.position;
         vectorAPj.Normalize();
+        transform.LookAt(agente.enemigoActual.transform.position);
         vectorAPj.y += agente.rangoAleatorio;
         bool choco = Physics.Raycast(transform.position, vectorAPj, out hit, largoDelRayo, layers);
-        print(choco);
         if (choco)
         {
             print("pew pew");

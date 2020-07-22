@@ -1398,6 +1398,7 @@ Transform:
   - {fileID: 3117462504164854328}
   - {fileID: 3117462503337691227}
   - {fileID: 3117462504308265426}
+  - {fileID: 1475256394928723415}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 179.46901, z: 0}
@@ -1527,10 +1528,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoActual: {fileID: 0}
-  rangoVision: 100
-  rangoAtaque: 10
+  rangoVision: 20
+  rangoAtaque: 5
   anguloVision: 0.5
-  rangoAleatorio: 0
+  rangoAleatorio: 0.2
 --- !u!114 &8922270816231129940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1886,3 +1887,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atenuacion: 1
+--- !u!1 &5186679390370099128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475256394928723415}
+  m_Layer: 8
+  m_Name: shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1475256394928723415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186679390370099128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15, y: 2.62, z: 0.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3117462502951863199}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
