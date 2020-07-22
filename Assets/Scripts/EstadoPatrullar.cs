@@ -50,8 +50,8 @@ public class EstadoPatrullar : MonoBehaviour
                 enemigoDetectado = GetComponent<EstadoPerseguir>();
                 enemigoDetectado.enabled = true;
                 enabled = false;
-               agente.enemigoActual = colliders[i].gameObject;
-
+                agente.enemigoActual = colliders[i].gameObject;
+                break;
             }
 
         }
