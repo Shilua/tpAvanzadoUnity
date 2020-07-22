@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemigoDetectado : MonoBehaviour
+public class EstadoPerseguir : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

@@ -19,6 +19,7 @@ public class EstadoPatrullar : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         puntoActual = 0;
         destino = puntos[0];
+        
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class EstadoPatrullar : MonoBehaviour
             puntoActual = 0;
         }
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 10, layers);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, agente.rangoVision, layers);
 
         for (int i = 0 ; i > colliders.Length; i++)
         {
@@ -44,8 +45,11 @@ public class EstadoPatrullar : MonoBehaviour
             Vector3 vectorAPj = jugadorEnRango.position - transform.position;
             vectorAPj.Normalize();
             float dot = Vector3.Dot(transform.forward, vectorAPj);
-            if(dot > 0.5)
+            if(dot > agente.anguloVision)
             {
+                enemigoDetectado = GetComponent<EstadoPerseguir>();
+                enemigoDetectado.enabled = true;
+                enabled = false;
                agente.enemigoActual = colliders[i].gameObject;
 
             }
