@@ -27,6 +27,7 @@ public class EstadoPerseguir : MonoBehaviour
         bool choco = Physics.Raycast(transform.position, vectorAPj, out hit, agente.rangoVision, layers);
         if (!choco)
         {
+            navMeshAgent.SetDestination(transform.position);
             enemigoPerdido = GetComponent<EstadoPatrullar>();
             enemigoPerdido.enabled = true;
             enabled = false;
@@ -36,6 +37,7 @@ public class EstadoPerseguir : MonoBehaviour
 
         if (distancia < agente.rangoAtaque)
         {
+            navMeshAgent.SetDestination(transform.position);
             enemigoEnRango = GetComponent<EstadoAtacar>();
             enemigoEnRango.enabled = true;
             enabled = false;

@@ -1064,6 +1064,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2940379123799420758, guid: 871025f4f0c5b054c8efc81a08c496c3,
+        type: 3}
+      propertyPath: rangoVision
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2940379123799420758, guid: 871025f4f0c5b054c8efc81a08c496c3,
+        type: 3}
+      propertyPath: rangoAtaque
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3117462502951863199, guid: 871025f4f0c5b054c8efc81a08c496c3,
         type: 3}
       propertyPath: m_LocalPosition.x

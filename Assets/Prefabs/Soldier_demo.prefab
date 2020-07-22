@@ -1371,6 +1371,7 @@ GameObject:
   - component: {fileID: 8121288885217568928}
   - component: {fileID: 2940379123799420758}
   - component: {fileID: 8922270816231129940}
+  - component: {fileID: 6531602666542740432}
   m_Layer: 8
   m_Name: Soldier_demo
   m_TagString: Untagged
@@ -1526,8 +1527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoActual: {fileID: 0}
-  rangoVision: 10
-  rangoAtaque: 3
+  rangoVision: 100
+  rangoAtaque: 10
   anguloVision: 0.5
   rangoAleatorio: 0
 --- !u!114 &8922270816231129940
@@ -1544,6 +1545,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemigoPerdido: {fileID: 0}
   enemigoEnRango: {fileID: 0}
+  layers:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &6531602666542740432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117462502951903231}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7628b9cdb0af64aba7c96b55be9eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigoFueraRango: {fileID: 0}
+  enemigoMuerto: {fileID: 0}
   layers:
     serializedVersion: 2
     m_Bits: 512
