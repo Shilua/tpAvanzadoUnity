@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!navMeshAgent.pathPending && navMeshAgent.hasPath && navMeshAgent.remainingDistance < 0.5f)
+        /*if (!navMeshAgent.pathPending && navMeshAgent.hasPath && navMeshAgent.remainingDistance < 0.5f)
         {
             puntoActual++;
             destino = puntos[puntoActual];
@@ -38,7 +38,8 @@ public class EnemyController : MonoBehaviour
         if(puntoActual == puntos.Length - 1 )
         {
             puntoActual = 0;
-        }
+        }*/
+        InvokeRepeating("Disparar", 0, 0.5f);
     }
 
     // Update is called once per frame
@@ -89,7 +90,7 @@ public class EnemyController : MonoBehaviour
         bool choco = Physics.Raycast(transform.position, transform.forward, out hit, largoDelRayo, layers);
         if (choco)
         {
-            //Instantiate(particle, hit.point, Quaternion.identity);
+            print("pew pew");
            
         }
     }

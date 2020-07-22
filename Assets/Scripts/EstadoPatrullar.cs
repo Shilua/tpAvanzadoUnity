@@ -39,7 +39,7 @@ public class EstadoPatrullar : MonoBehaviour
         }
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, agente.rangoVision, layers);
-        if(colliders != null)
+        if(colliders.Length != 0)
         {
             Transform jugadorEnRango = colliders[0].gameObject.transform;
             Vector3 vectorAPj = jugadorEnRango.position - transform.position;
