@@ -1506,7 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634a35de49b4582499e92583ff012e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigoDetectado: {fileID: 0}
   puntos:
   - {fileID: 0}
   - {fileID: 0}
@@ -1528,10 +1527,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigoActual: {fileID: 0}
-  rangoVision: 20
-  rangoAtaque: 5
+  rangoVision: 25
+  rangoAtaque: 10
   anguloVision: 0.5
-  rangoAleatorio: 0.2
+  rangoAleatorio: 0.1
 --- !u!114 &8922270816231129940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,8 +1543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7144cb1ea980643847a8d9b85a163f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigoPerdido: {fileID: 0}
-  enemigoEnRango: {fileID: 0}
   layers:
     serializedVersion: 2
     m_Bits: 512
@@ -1561,8 +1558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7628b9cdb0af64aba7c96b55be9eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigoFueraRango: {fileID: 0}
-  enemigoMuerto: {fileID: 0}
   layers:
     serializedVersion: 2
     m_Bits: 512

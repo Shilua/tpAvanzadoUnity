@@ -9,11 +9,11 @@ public class PuertaTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider collider)
     {
-        puerta = GameObject.Find("Puerta");
+        puerta = GameObject.Find("DoorDouble");
             if(puerta != null && puerta.activeSelf)
             {
                 puerta.SetActive(false);
-                StartCoroutine(activaPuerta(puerta, 2f));
+                StartCoroutine(activaPuerta(puerta, 4f));
             }
 
         

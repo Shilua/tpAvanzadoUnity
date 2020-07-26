@@ -7,8 +7,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class EstadoAtacar : MonoBehaviour
 {
-    public MonoBehaviour enemigoFueraRango;
-    public MonoBehaviour enemigoMuerto;
+    private MonoBehaviour enemigoFueraRango;
+    private MonoBehaviour enemigoMuerto;
     private Animator animator;
     private Agente agente;
     public LayerMask layers;
@@ -35,7 +35,7 @@ public class EstadoAtacar : MonoBehaviour
         {
 
             CancelInvoke("Disparar");
-            enemigoMuerto.enabled = true;
+            //enemigoMuerto.enabled = true;
             enabled = false;
         }
 
@@ -60,16 +60,17 @@ public class EstadoAtacar : MonoBehaviour
         
         RaycastHit hit;
         float largoDelRayo = 50f;
-        Vector3 otroVector = transform.forward;
-        otroVector.y += agente.rangoAleatorio;
+        //Vector3 otroVector = transform.forward;
+        //otroVector.y += agente.rangoAleatorio;
         Vector3 vectorAPj = agente.enemigoActual.transform.position - transform.position;
         vectorAPj.Normalize();
         transform.LookAt(agente.enemigoActual.transform.position);
-        vectorAPj.y += agente.rangoAleatorio;
+        vectorAPj.z += agente.rangoAleatorio;
         bool choco = Physics.Raycast(transform.position, vectorAPj, out hit, largoDelRayo, layers);
         if (choco)
         {
-            print("pew pew");
+            Vida vida = hit.collider.gameObject.GetComponent<Vida>();
+            vida.cantidad -= 0.10f;
         }
     }
 }

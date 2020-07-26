@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class EstadoPerseguir : MonoBehaviour
 {
-    public MonoBehaviour enemigoPerdido;
-    public MonoBehaviour enemigoEnRango;
+    private MonoBehaviour enemigoPerdido;
+    private MonoBehaviour enemigoEnRango;
     private Agente agente;
     private NavMeshAgent navMeshAgent;
     public LayerMask layers;

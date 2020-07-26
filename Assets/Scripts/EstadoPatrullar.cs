@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class EstadoPatrullar : MonoBehaviour
 {
-    public MonoBehaviour enemigoDetectado;
+    private MonoBehaviour enemigoDetectado;
     private NavMeshAgent navMeshAgent;
     public Transform[] puntos;
     private int puntoActual;
@@ -14,8 +15,13 @@ public class EstadoPatrullar : MonoBehaviour
     public LayerMask layers;
     private Animator animator;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        GameObject[] puntosGO = GameObject.FindGameObjectsWithTag("point");
+        for (int i = 0 ; i < puntosGO.Length; i++)
+        {
+            puntos[i] = puntosGO[i].transform;
+        }
         agente = GetComponent<Agente>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();

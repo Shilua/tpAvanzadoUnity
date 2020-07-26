@@ -20,7 +20,13 @@ public class Vida : MonoBehaviour
     void Update()
     {
         if(cantidad <= 0){
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+        }
+
+        if(cantidad != 0 && cantidad != 100)
+        {
+            float addLife = 3 * Time.deltaTime;
+            cantidad += addLife;
         }
     }
 
